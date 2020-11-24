@@ -4,6 +4,7 @@ typedef long long int ll;
 
 using namespace std;
 
+
 int get_ans(int ar[],int n,int k)
 {
 	sort(ar,ar+n);
@@ -14,21 +15,30 @@ int get_ans(int ar[],int n,int k)
 		swap(min,max);
 	}
 	
-	int ans = max-min;
+	int ans = ar[n-1]-ar[0];
 	
 	for(int i=1;i<n-1;i++)
 	{
 		int tempmin = ar[i]-k;
 		int tempmax = ar[i]+k;
 		
-		if(tempmin<=min && tempmax>=max)
+		if(tempmin>=min || tempmax<=max)
 		{
 			ar[i]+=k;
 			continue;
 		}
 		
-		
+		if(max-tempmin <= tempmax-min)
+		{
+			min = tempmin;
+		}
+		else
+		{
+			max = tempmax;
+		}
 	}
+	cout<<max<<" "<<min<<" "<<ans;
+	cout<<std::min(ans,max-min);
 }
 
 void solve()
