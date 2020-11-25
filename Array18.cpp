@@ -8,38 +8,51 @@ vector<int> get_ans(int a[],int b[],int c[],int n,int m,int k)
 {
 	vector<int> ans;
 	int i=0,j=0,l=0;
+	int temp=0;
 	while(i<n && j<m && l<k)
 	{
 		if(a[i]==b[j] && b[j]==c[l])
 		{
-			it = std::find (ans.begin(), ans.end(), a[i]); 
-			if(it == ans.end())
-			{
-				ans.push_back(a[i]);
-				i++;
-				j++;
-				l++;
+		    if(temp != a[i])
+		    {
+		        temp = a[i];
+		        ans.push_back(a[i]);
+		        i++;
+		        j++;
+		        k++;
+		    }
+		    else
+		    {
+		    	i++;
+		    	j++;
+		    	k++;
 			}
-			
-		}
-		
-	else if(a[i]<b[j])
-		{
-			i++;
-		}
-		
-	else if(b[j]<c[l])
-		{
-			j++;
 		}
 		
 		else
 		{
-			l++;
-		}
-	}
+		   if(a[i]<b[j])
+		    {
+			    i++;
+		    }
+		
+	        else
+	        {
+	             if(b[j]<c[l])
+		        {
+			        j++;
+	        	}
+		
+		        else
+		        {
+		        	l++;
+		        }
+	          }
+		    }
+	    
+	    }
 	
-	return ans;
+	    return ans;
 }
 
 void solve()
