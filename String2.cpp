@@ -14,6 +14,8 @@ void solve()
 	
 	int n = s.length();
 	int ans = 1;
+	int i=0;
+	int j=n-1;
 	while(i<=j)
 	{
 		if(s[i]!=s[j])
@@ -23,7 +25,14 @@ void solve()
 		i++;
 		j--;
 	}
-	cout<<ans;
+	if(ans==1)
+	{
+		cout<<"yes";
+	}
+	else
+	{
+		cout<<"no";
+	}
 }
 
 int main()
