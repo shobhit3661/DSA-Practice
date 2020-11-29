@@ -11,7 +11,7 @@ void reverseList(int a[],int n)
 	{
 		int temp = a[last];
 		a[last] = a[i];
-		a[i] = temp;
+		a[i] =  temp;
 		
 		last--;
 	}
