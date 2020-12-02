@@ -9,13 +9,13 @@ using namespace std;
 
 void solve()
 {
-	int n,k;
+	ll n,k;
 	cin>>n>>k;
 	
-	int arr[n];
+	ll arr[n];
 	arin(arr,n);
 	
-	int start = 0, end = 0,count = 0, sum = arr[0]; 
+	ll start = 0, end = 0,count = 0, sum = arr[0]; 
 	while (start < n && end < n) { 
 		if (sum < k) { 
 			end++; 
@@ -27,7 +27,7 @@ void solve()
 		else { 
 			sum /= arr[start]; 
 			start++; 
-		} 
+		} f
 	} 
 
 	cout<<count<<"\n"; 
