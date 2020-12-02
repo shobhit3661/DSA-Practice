@@ -10,7 +10,7 @@ using namespace std;
 void solve()
 {
 	ll n,k;
-	cin>>n>>k;
+	cin>>k>>n;
 	
 	ll arr[n];
 	arin(arr,n);
@@ -27,7 +27,7 @@ void solve()
 		else { 
 			sum /= arr[start]; 
 			start++; 
-		} f
+		} 
 	} 
 
 	cout<<count<<"\n"; 
