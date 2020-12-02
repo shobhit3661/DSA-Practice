@@ -23,11 +23,57 @@ void solve()
 	
 	int max_el = *max_element(ar,ar+n);
 	
-	int maxbit = log2(max_le)+1;
+	int maxbit = log2(max_el)+1;
 	
 	int total_sub = n*(n+1)/2;
-	
+		
 	int s=0;
+	
+	for(int i=0;i<maxbit;i++)
+	{
+		int temp=0;
+		vector<int> index;
+		int sum=0;
+		
+		for(int j=0;j<n;j++)
+		{
+			int a = ar[j]>>i;
+			if(!(a&1))
+			{
+				index.pb(j);
+			}
+		}
+		
+		int subArrayNotSet =0;
+		int cnt = 1;
+		
+		for(int j=1;j<index.size();j++)
+		{
+			if(index[j]-index[j-1]==1)
+			{
+				cnt++;
+			}
+			else
+			{
+				subArrayNotSet += cnt * (cnt+1)/2;
+				cnt = 1;
+			}
+		}
+		
+		subArrayNotSet += cnt * (cnt+1)/2;
+		
+		if(index.size()==0)
+		{
+			subArrayNotSet = 0;
+		}
+		
+		int count = total_sub-subArrayNotSet;
+		
+		s += count*pow(2,i);
+		
+	}
+	
+	cout<<s;
 	
 }
 
