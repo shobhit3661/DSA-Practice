@@ -1,8 +1,3 @@
-/*
-	https://www.geeksforgeeks.org/sum-of-all-subarrays/
-	sum of all sub array in O(N);
-*/
-
 #include<bits/stdc++.h>
 #define fast  ios::sync_with_stdio(false); cin.tie(0); cout.tie(0)
 #define arin(x,n) for(int i=0;i<n;i++)cin>>x[i]
@@ -18,17 +13,17 @@ void solve()
 	cin>>n;
 	
 	int ar[n];
+	ll ans=1;
+	
 	arin(ar,n);
 	
-	//sum of all subarry
-	
-	int sum = 0;
 	for(int i=0;i<n;i++)
 	{
-		sum +=(ar[i]*(n-i)*(i+1));
+		ans *= (pow(ar[i],(n-i)*(i+1)));
 	}
 	
-	cout<<sum;
+	cout<<ans;
+	
 }
 
 int main()
