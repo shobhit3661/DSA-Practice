@@ -6,13 +6,13 @@ using namespace std;
 
 void solve()
 {
-	int n;
-	cin>>n;
+	int n,m;
+	cin>>n>>m;
 	
-	int ar[n][n];
+	int ar[n][m];
 	for(int i=0;i<n;i++)
 	{
-		for(int j=0;j<n;j++)
+		for(int j=0;j<m;j++)
 		{
 			cin>>ar[i][j];
 		}
@@ -20,7 +20,7 @@ void solve()
 	
 	for(int i=0;i<n;i++)
 	{
-		for(int j=i;j<n;j++)
+		for(int j=i;j<m;j++)
 		{
 			swap(ar[i][j],ar[j][i]);	
 		}
@@ -28,11 +28,23 @@ void solve()
 	
 	for(int i=0;i<n;i++)
 	{
-		for(int j=0;j<n/2;j++)
+		for(int j=0;j<m;j++)
 		{
-			swap(ar[i][j],ar[][]);
+			cout<<ar[i][j]<<" ";
 		}
+		cout<<"\n";
 	}
+	
+	int k = n-1;
+	for(int i=0;i<n/2;i++)
+	{
+		for(int j=0;j<m;j++)
+		{
+			swap(ar[k][j],ar[i][j]);
+		}
+		k--;
+	}
+	
 }
 
 int main()
