@@ -13,7 +13,7 @@ void reverseList(int a[],int n)
 		a[last] = a[i];
 		a[i] =  temp;
 		
-		last--;
+		 last--;
 	}
 }
 
