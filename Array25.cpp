@@ -33,14 +33,14 @@ void solve()
 		
 	for(int i=1;i<=k;i++)
 	{
+	    int max_so_far = INT_MIN;
 		for(int j=1;j<n;j++)
 		{
-			int max_so_far = INT_MIN;
-			for(int t=0;t<j;t++)
-				max_so_far = max(max_so_far,ar[j]-ar[t]+table[i-1][t]);
-				
-			table[i][j] = max(table[i][j-1],max_so_far);
+			   max_so_far = max(max_so_far,table[i-1][j-1]-ar[j-1]);
+		
+		    table[i][j] = max(table[i][j-1],ar[j]+max_so_far);
 		}
+		    
 	}
 	
 	cout<<table[k][n-1];
