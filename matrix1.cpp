@@ -23,7 +23,7 @@ void solve()
 	}
 	
 	
-	for(int x=n,y=m;)
+	for(int x=0,y=m;)
 	
 	
 	
