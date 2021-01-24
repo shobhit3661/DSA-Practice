@@ -23,6 +23,8 @@ void solve()
 	}
 	
 	
+	for(int x=n,y=m;)
+	
 	
 	
 }
