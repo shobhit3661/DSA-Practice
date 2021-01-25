@@ -14,7 +14,7 @@
 		
 		int ar[n];
 		arin(ar,n);
-		
+		int water=0;
 		int left[n];
 		int right[n];
 		left[0] = ar[0];
@@ -33,7 +33,7 @@
 		
 		for(int i=0;i<n;i++)
 		{
-			water += min(left[i],rigth[i])-ar[i];
+			water += min(left[i],right[i])-ar[i];
 		}
 		
 		cout<<water;
